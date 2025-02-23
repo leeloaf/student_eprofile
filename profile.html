@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+    <title>Profile - UiTM E-Profile</title>
+    <style>
+        body {
+            background-image: url('cyber.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            background-attachment: fixed; 
+            color: navy; 
+            font-family: 'Roboto', sans-serif; 
+        }
+        .profile-card {
+            background-color: rgba(255, 255, 255, 0.9); 
+            border-radius: 10px; 
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
+            margin: 20px auto; 
+            width: 80%; 
+            max-width: 800px; 
+            padding: 20px; 
+            display: flex; 
+            flex-direction: row; 
+        }
+        .profile-img {
+            width: 40%;
+            height: auto; 
+            border-top-left-radius: 10px; 
+            border-bottom-left-radius: 10px; 
+        }
+        .card-body {
+            padding-left: 20px; 
+            width: 60%; 
+        }
+        .btn-back {
+            background-color: #6f42c1; 
+            color: white;
+        }
+        .btn-back:hover {
+            background-color: #5a32a1; 
+        }
+        footer {
+            background-color: #343a40; 
+            color: white; 
+            text-align: center; 
+            padding: 10px 0; 
+            position: relative; 
+            bottom: 0; 
+            width: 100%; 
+        }
+            
+    </style>
+</head>
+<body>
+        <div class="profile-card">
+            <img src="" class="profile-img" id="profile-image" alt="Student Image"> 
+            <div class="card-body">
+                <h5 class="card-title" id="student-name"></h5>
+                <p class="card-text"><strong>Matrix Number:</strong> <span id="matrix-number"></span></p>
+                <p class="card-text"><strong>Gender:</strong> <span id="gender"></span></p>
+                <p class="card-text"><strong>Class:</strong> <span id="class"></span></p>
+                <p class="card-text"><strong>Faculty:</strong> <span id="faculty"></span></p>
+                <p class="card-text"><strong>Current Semester:</strong> <span id="semester"></span></p>
+                <p class="card-text"><strong>Email:</strong> <span id="email"></span></p>
+                <p class="card-text"><strong>Phone:</strong> <span id="phone"></span></p>
+                <p class="card-text"><strong>About:</strong> <span id="about"></span></p>
+                <a href="profiles.html" class="btn btn-back">Back to Profiles</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        // students data in detail
+        const students = {
+            1: {
+                name: "Nur Aleeya Fazlyianie binti Ahmad Mohtar",
+                matrixNumber: "2024745835",
+                gender: "Female",
+                class: "D1CDIM2624B",
+                faculty: "Information Management",
+                semester: "4",
+                email: "nuraleeya@gmail.com",
+                phone: "018-4715874",
+                about: "Aleeya is a dedicated student with a passion for software development and artificial intelligence.",
+                image: "aya.jpg" 
+            },
+            2: {
+                name: "Amira Adilah binti Rozaiman",
+                matrixNumber: "2024505711",
+                gender: "Female",
+                class: "CDCS2534A",
+                faculty: "Computer Science",
+                semester: "4",
+                email: "miradi@gmail.com",
+                phone: "012-9876543",
+                about: "Amira is an enthusiastic learner who loves exploring new technologies.",
+                image: "mira.jpg" 
+            },
+            3: {
+                name: "Nurin Nafeesa Jamil",
+                matrixNumber: "2024506721",
+                gender: "Female",
+                class: "CDCS2534A",
+                faculty: "Computer Science",
+                semester: "4",
+                email: "nurinnafeesa@gmail.com",
+                phone: "018-8760685",
+                about: "Nurin excels in problem-solving, turning complex algorithms into efficient solutions.",
+                image: "nurin.jpg" 
+            },
+            4: {
+                name: "Khadija Nazrin binti Mohd Khiruddin",
+                matrixNumber: "2024441318",
+                gender: "Female",
+                class: "MC2431A",
+                faculty: "Communication and Media Studies",
+                semester: "1",
+                email: "dijazrin@gmail.com",
+                phone: "014-3648659",
+                about: "Khadija has an incredible talent for storytelling, using her creativity and communication skills to craft compelling content that captivates any audience.",
+                image: "dija.jpg" 
+            },
+            5: {
+                name: "Ayuni Maisarah binti Abdullah",
+                matrixNumber: "2024741083",
+                gender: "Female",
+                class: "D1CDIM2624B",
+                faculty: "Information Management",
+                semester: "4",
+                email: "ayunimai@gmail.com",
+                phone: "019-9369254",
+                about: "Maisarah enjoys building interactive websites, blending creativity with technical expertise.",
+                image: "caah.jpg" 
+            },
+            6: {
+                name: "Muhammad Danial bin Ahmad Ridzuan",
+                matrixNumber: "2024926977",
+                gender: "Male",
+                class: "MBA2762A",
+                faculty: "Business and Management",
+                semester: "2",
+                email: "dannyrizzy@gmail.com",
+                phone: "015-9760163",
+                about: "Danial has a keen eye for global markets, combining strategic thinking and cultural awareness to create innovative solutions in international trade and commerce.",
+                image: "danial.jpg" 
+            },
+            7: {
+                name: "Deana binti Roslan",
+                matrixNumber: "2024987678",
+                gender: "Female",
+                class: "SWLG2402A",
+                faculty: "Akademi Pengajian Bahasa",
+                semester: "2",
+                email: "deanaroslan@gmail.com",
+                phone: "012-5982487",
+                about: "Deana skillfully articulating ideas with clarity and precision while fostering meaningful connections through her words.",
+                image: "deana.jpg" 
+            },
+            8: {
+                name: "Syafiq bin Ahmad Asri",
+                matrixNumber: "2024794987",
+                gender: "Male",
+                class: "D1CDIM2624B",
+                faculty: "Information Management",
+                semester: "4",
+                email: "syafiqasri@gmail.com",
+                phone: "018-8095876",
+                about: "Syafiq loves collaborating on software development, bringing fresh ideas and strong teamwork to every project.",
+                image: "syafiq.jpg" 
+            },
+            9: {
+                name: "Amy Haikal bin Rosli",
+                matrixNumber: "2024158761",
+                gender: "Male",
+                class: "D1CDIM2624B",
+                faculty: "Information Management",
+                semester: "4",
+                email: "buzzmy@gmail.com",
+                phone: "016-0580213",
+                about: "Amy is fascinated by data science, analyzing patterns to uncover meaningful insights.",
+                image: "amy.png" 
+            }
+            
+        };
+
+        // Function to get query parameter by name
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Load student data based on the ID from the URL
+        const studentId = getQueryParam('id');
+        if (studentId && students[studentId]) {
+            const student = students[studentId];
+            document.getElementById('student-name').innerText = student.name;
+            document.getElementById('matrix-number').innerText = student.matrixNumber;
+            document.getElementById('gender').innerText = student.gender;
+            document.getElementById('class').innerText = student.class;
+            document.getElementById('faculty').innerText = student.faculty;
+            document.getElementById('semester').innerText = student.semester;
+            document.getElementById('email').innerText = student.email;
+            document.getElementById('phone').innerText = student.phone;
+            document.getElementById('about').innerText = student.about;
+            document.getElementById('profile-image').src = student.image; 
+        } else {
+            document.querySelector('.profile-card').innerHTML = '<p class="text-center">Student not found.</p>';
+        }
+    </script>
+        <footer>
+            <p>&copy; 2023 UiTM E-Profile by Aleeya. All rights reserved.</p>
+        </footer>
+</body>
+</html>

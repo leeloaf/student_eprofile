@@ -1,0 +1,61 @@
+body {
+    background-image: url('your-background-image.jpg'); /* Replace with your image path */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the background image */
+    color: white; /* Change text color to white for better contrast */
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background for the card */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.card-title {
+    font-weight: bold; /* Make the title bold */
+    color: #6f42c1; /* Purple color for the title */
+}
+
+.form-control {
+    border-radius: 5px; /* Rounded corners for input fields */
+}
+
+input::placeholder {
+    color: grey; /* Grey color for placeholder text */
+    opacity: 1; /* Ensures the placeholder is fully opaque */
+}
+
+.btn-custom {
+    background-color: #6f42c1; /* Purple color */
+    color: white; /* Text color for the button */
+}
+
+.btn-custom:hover {
+    background-color: #5a32a1; /* Darker purple on hover */
+}
+
+/* Optional: Style for the footer */
+.footer {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent footer */
+    color: white;
+}
+
+.card {
+    border-radius: 10px; /* Rounded corners for profile cards */
+}
+
+.card-img-top {
+    border-top-left-radius: 10px; /* Rounded corners for the top of the card */
+    border-top-right-radius: 10px; /* Rounded corners for the top of the card */
+    height: 200px; /* Fixed height for images */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+.btn-custom {
+    background-color: #6f42c1; /* Purple color */
+    color: white; /* Text color for the button */
+}
+
+.btn-custom:hover {
+    background-color: #5a32a1; /* Darker purple on hover */
+}
